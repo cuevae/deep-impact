@@ -10,6 +10,8 @@ $app->get('/hello/{name}', function($name) use($app) {
 
 $app->get('/test/', function(){
 
+    echo "Test";
+
 
     $seedData = array(
         array(
