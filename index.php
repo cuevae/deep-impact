@@ -29,6 +29,10 @@ $app->get('/reliefweb', function() {
 
 });
 
+$app->get('/', function(){
+    return 'Welcome to SkyGlass API.';
+});
+
 $app->get('/deepimpact', function () {
     return "Deep Impact";
 });
