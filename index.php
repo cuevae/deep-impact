@@ -8,7 +8,7 @@ $app->get('/hello/{name}', function($name) use($app) {
     return 'Hello '.$app->escape($name);
 });
 
-$app->get('/test/', function(){
+$app->get('/test', function(){
 
     echo "Test";
 
