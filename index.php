@@ -39,7 +39,7 @@ $app->get('/nasa-schedule', function(){
     $events = $nsc->getEvents();
 
     $headers = array('Content-type' => 'application/json');
-    return new Response($nsc, 200, $headers);
+    return new Response(json_encode($events), 200, $headers);
 
 });
 
