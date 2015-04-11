@@ -38,7 +38,7 @@ $app->get('/test/', function(){
     $options = array("connectTimeoutMS" => 30000);
 
     $client = new MongoClient($uri, $options );
-    $db = $client->selectDB("MongoLab-hk");
+    $db = $client->selectDB("IbmCloud_u9modlj8_t58o1t4v");
 
     $songs = $db->songs;
     // To insert a dict, use the insert method.
