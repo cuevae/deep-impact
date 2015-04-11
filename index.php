@@ -20,6 +20,15 @@ $app->get('/gdacs', function () {
 
 });
 
+$app->get('/reliefweb', function() {
+
+    $rCrawler = new \DeepImpact\Crawlers\ReliefWeb();
+    $events = $rCrawler->getEvents();
+
+    return $events;
+
+});
+
 $app->get('/deepimpact', function () {
     return "Deep Impact";
 });
