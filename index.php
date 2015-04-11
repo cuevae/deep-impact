@@ -64,6 +64,8 @@ $app->get('/test/', function(){
     // Only close the connection when your app is terminating
     $client->close();
 
+    return 'This is test endpoint';
+
 });
 
 $app->run();
