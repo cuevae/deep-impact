@@ -1,9 +1,11 @@
 <?php
 
-require_once './vendor/autoload.php';
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+require_once './vendor/autoload.php';
+
+use \Symfony\Component\HttpFoundation\Response;
 
 $app = new Silex\Application();
 
@@ -16,25 +18,33 @@ $app->get('/gdacs', function () {
     $gdacsCrawler = new \DeepImpact\Crawlers\GdacsCrawler();
     $events       = $gdacsCrawler->getEvents();
 
-    return json_encode($events);
+    $headers = array('Content-type' => 'application/json');
+    return new Response(json_encode($events), 200, $headers);
 
 });
 
 $app->get('/reliefweb', function() {
 
-    $rCrawler = new \DeepImpact\Crawlers\ReliefWeb();
+    $rCrawler = new \DeepImpact\Crawlers\ReliefWebCrawler();
     $events = $rCrawler->getEvents();
 
-    return $events;
+    $headers = array('Content-type' => 'application/json');
+    return new Response($events, 200, $headers);
+
+});
+
+$app->get('/nasa-schedule', function(){
+
+    $nsc = new \DeepImpact\Crawlers\NasaMissionCrawler();
+    $events = $nsc->getEvents();
+
+    $headers = array('Content-type' => 'application/json');
+    return new Response($nsc, 200, $headers);
 
 });
 
 $app->get('/', function(){
-    return 'Welcome to SkyGlass API.';
-});
-
-$app->get('/deepimpact', function () {
-    return "Deep Impact";
+    return new Response('Welcome to SkyGlass API.', 200);
 });
 
 $app->run();

@@ -14,7 +14,7 @@
 namespace DeepImpact\Crawlers;
 
 
-class ReliefWeb implements Crawler{
+class ReliefWebCrawler implements Crawler{
 
     const ENDPOINT = 'http://api.rwlabs.org/v1/disasters/11880';
 

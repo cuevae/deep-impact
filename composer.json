@@ -1,7 +1,8 @@
 {
   "require": {
     "silex/silex": "~1.2",
-    "mongofill/mongofill": "dev-master"
+    "mongofill/mongofill": "dev-master",
+    "sunra/php-simple-html-dom-parser": "v1.5.0"
   },
   "autoload": {
     "psr-4": {
