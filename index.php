@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $app = new Silex\Application();
 
 $app->get('/hello/{name}', function($name) use($app) {
@@ -66,6 +69,10 @@ $app->get('/test', function(){
 
     return 'This is test endpoint';
 
+});
+
+$app->get('/deepimpact/', function(){
+    return "";
 });
 
 $app->run();
