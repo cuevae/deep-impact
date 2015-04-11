@@ -71,8 +71,8 @@ $app->get('/test', function(){
 
 });
 
-$app->get('/deepimpact/', function(){
-    return "";
+$app->get('/deepimpact', function(){
+    return "Deep Impact";
 });
 
 $app->run();
