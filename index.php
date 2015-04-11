@@ -29,7 +29,7 @@ $app->get('/reliefweb', function() {
     $events = $rCrawler->getEvents();
 
     $headers = array('Content-type' => 'application/json');
-    return new Response($events, 200, $headers);
+    return new Response(json_encode($events), 200, $headers);
 
 });
 
