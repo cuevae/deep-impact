@@ -38,10 +38,10 @@ class ReliefWebCrawler implements Crawler{
                                $eventData->data[0]->fields->name,
                                $eventData->data[0]->fields->description,
                                $eventData->data[0]->fields->date->created,
-                               $eventData->data[0]->fields->url,
+                               "http://maps.googleapis.com/maps/api/staticmap?center={$eventData->data[0]->fields->country[0]->location[1]},{$eventData->data[0]->fields->country[0]->location[0]}&zoom=7&size=400x400",
                                new Location(
-                                   $eventData->data[0]->fields->country[0]->location[0],
                                    $eventData->data[0]->fields->country[0]->location[1],
+                                   $eventData->data[0]->fields->country[0]->location[0],
                                    $eventData->data[0]->fields->country[0]->name
                                )
             );
