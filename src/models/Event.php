@@ -27,7 +27,9 @@ class Event
 
     public $link;
 
-    public function __construct($type, $title, $description, $pubDate, $link, Location $location)
+    public $img;
+
+    public function __construct($type, $title, $description, $pubDate, $link, $img, Location $location)
     {
         $this->type = $type;
         $this->title = $title;
@@ -35,6 +37,7 @@ class Event
         $this->pubDate = $pubDate;
         $this->link = $link;
         $this->location = $location;
+        $this->img = $img;
     }
 
 }
