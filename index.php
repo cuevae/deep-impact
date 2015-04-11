@@ -33,6 +33,16 @@ $app->get('/reliefweb', function() {
 
 });
 
+$app->get('/usgs', function() {
+
+    $uC = new \DeepImpact\Crawlers\UsgsEarthquakeCrawler();
+    $events = $uC->getEvents();
+
+    $headers = array('Content-type' => 'application/json');
+    return new Response(json_encode($events), 200, $headers);
+
+});
+
 $app->get('/nasa-schedule', function(){
 
     $nsc = new \DeepImpact\Crawlers\NasaMissionCrawler();
